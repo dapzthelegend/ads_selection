@@ -19,13 +19,14 @@ d = 10
 ads_selected=[0]
 numbers_of_selections =[0]* d
 sums_of_rewards = [0]* d
+
 for n in range(0,N):
     ad = 0
     max_upper_bound = 0
     for i in range (0,d):
-        if(numbers_of_selections[i]>0):
-            average_reward = sums_of_rewards[i]/ numbers_of_selections[i]
-            delta_i = math.sqrt(3/2 * math.log(n+1)/ numbers_of_selections[i])
+        if(numbers_of_selections[i] > 0):
+            average_reward = sums_of_rewards[i] / numbers_of_selections[i]
+            delta_i = math.sqrt(3/2 * math.log(n+1) / numbers_of_selections[i])
             upper_bound = average_reward + delta_i
         else:
             upper_bound = 1e400
@@ -39,9 +40,3 @@ for n in range(0,N):
     reward = datasat.values[n,ad]
     sums_of_rewards[ad]= sums_of_rewards[ad] + reward
     
-      
-            
-                
-            
-            
-        
